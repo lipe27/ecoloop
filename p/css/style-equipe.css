@@ -1,0 +1,126 @@
+/* * PROJECT_NAME: EcoLoop Digital Experience Platform
+ * MODULE_ID: EQUIPE
+ * FILE_NAME: style-equipe.css
+ * VERSION_CONTROL: v1.0.0-PROD-CRISTAL
+ * AUTHOR_TEAM: Giga-ARCHITECTS OMEGA-TIER CRISTAL
+ * CREATION_DATE: 2025-11-01
+ * LICENSE_STATUS: PROPRIETARY & CONFIDENTIAL
+ * DESCRIPTION_EXTENDED: Estilos para os Cards da Equipe Executiva e o Conselho.
+*/
+
+/* --- UTILITÁRIOS LOCAIS --- */
+.text-center { text-align: center; }
+.max-width-800 { max-width: 800px; margin-left: auto; margin-right: auto; }
+.margin-bottom-lg { margin-bottom: var(--spacing-unit-lg); }
+.bg-white { background-color: var(--color-surface-high); }
+.padding-top-header { padding-top: 100px; }
+
+
+/* --- SEÇÃO: EQUIPE EXECUTIVA (executive-team) --- */
+.team-grid {
+    gap: var(--spacing-unit-md);
+}
+
+.team-member-card {
+    padding: var(--spacing-unit-md);
+    background-color: var(--color-surface-high);
+    text-align: center;
+    border-radius: var(--border-radius-default);
+    box-shadow: var(--shadow-elevation-low);
+    /* CRÍTICO: Configuração para Efeito de Rotação 3D sutil no hover */
+    perspective: 1000px; 
+    transition: transform 0.5s var(--transition-timing-function);
+    margin-bottom: var(--spacing-unit-sm); /* Mobile spacing */
+}
+
+.team-member-card:hover {
+    /* Simulação de um "flip" de 2 graus para dar profundidade */
+    transform: translateY(-5px) rotateY(2deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.team-member-card__photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: var(--spacing-unit-sm);
+    border: 3px solid var(--color-brand-primary);
+    filter: grayscale(80%);
+    transition: filter 0.5s;
+}
+.team-member-card:hover .team-member-card__photo {
+    filter: grayscale(0%);
+}
+
+.team-member-card__name {
+    font-family: var(--font-family-headline);
+    font-size: 1.2rem;
+    color: var(--color-brand-secondary-dark);
+    margin-bottom: var(--spacing-unit-xxs);
+}
+
+.team-member-card__title {
+    color: var(--color-brand-primary);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-unit-xs);
+}
+
+.team-member-card__bio {
+    min-height: 80px; /* Garante alinhamento visual em 3 linhas */
+}
+
+.team-member-card__linkedin {
+    display: inline-block;
+    color: var(--color-brand-secondary-dark);
+    font-size: 1.5rem;
+    margin-top: var(--spacing-unit-sm);
+    transition: color 0.3s;
+}
+.team-member-card__linkedin:hover {
+    color: var(--color-brand-primary);
+}
+
+
+/* --- SEÇÃO: CONSELHO CONSULTIVO (advisory-board) --- */
+.advisory-grid {
+    gap: var(--spacing-unit-sm);
+}
+
+.advisory-card {
+    padding: var(--spacing-unit-sm);
+    background-color: var(--color-surface-high);
+    border: 1px dashed #e0e0e0;
+    border-radius: var(--border-radius-default);
+    text-align: left;
+    transition: border-color 0.3s;
+    margin-bottom: var(--spacing-unit-sm);
+}
+
+.advisory-card:hover {
+    border-color: var(--color-brand-primary);
+    box-shadow: var(--shadow-elevation-low);
+}
+
+.advisory-card__name {
+    font-family: var(--font-family-headline);
+    font-size: 1.1rem;
+    color: var(--color-text-strong);
+    margin-bottom: var(--spacing-unit-xxs);
+}
+
+.advisory-card__title {
+    color: var(--color-brand-primary);
+    font-weight: var(--font-weight-regular);
+    margin-bottom: var(--spacing-unit-xs);
+}
+
+/* --- RESPONSIVIDADE DESKTOP --- */
+@media (min-width: 768px) {
+    .team-member-card {
+        margin-bottom: 0; 
+    }
+    .advisory-card {
+        margin-bottom: 0;
+    }
+}
